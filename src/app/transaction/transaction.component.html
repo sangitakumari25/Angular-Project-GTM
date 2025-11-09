@@ -1,0 +1,74 @@
+<div class="transaction-form tw-p-6 tw-bg-white tw-shadow-md tw-rounded-lg">
+
+  
+  <h3 class="section-header tw-text-lg tw-font-bold tw-mb-4">📑 TRANSACTION BASICS</h3>
+  <div class="form-row tw-grid tw-grid-cols-3 tw-gap-4">
+    <div class="form-group">
+      <label>Transaction ID *</label>
+      <input type="text" placeholder="Enter Transaction ID" [formControl]="transactionId">
+    </div>
+    <div class="form-group">
+      <label>Transaction Date *</label>
+      <input type="date" [formControl]="transactionDate">
+    </div>
+    <div class="form-group">
+      <label>Shipment Date *</label>
+      <input type="date" [formControl]="shipmentDate">
+    </div>
+  </div>
+
+  <div class="form-row tw-grid tw-grid-cols-3 tw-gap-4 tw-mt-4">
+    <div class="form-group">
+      <label>Transaction Type *</label>
+      <select [formControl]="transactionType">
+        <option value="">Select type</option>
+        <option *ngFor="let opt of options" [value]="opt.value">{{ opt.view }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Reference # *</label>
+      <input type="text" placeholder="Enter Reference" [formControl]="refrance">
+    </div>
+    <div class="form-group">
+      <label>Customer PO No. *</label>
+      <input type="text" placeholder="Enter Customer PO No." [formControl]="customerPoNo">
+    </div>
+  </div>
+
+  
+  <h3 class="section-header tw-text-lg tw-font-bold tw-mt-6 tw-mb-4">💰 INVOICE DETAILS</h3>
+  <div class="form-row tw-grid tw-grid-cols-3 tw-gap-4">
+    <div class="form-group">
+      <label>Invoice Number *</label>
+      <input type="text" placeholder="Enter Invoice Number" [formControl]="invoiceNumber">
+    </div>
+    <div class="form-group">
+      <label>Invoice Date *</label>
+      <input type="date" [formControl]="invoiceDate">
+    </div>
+    <div class="form-group">
+      <label>Invoice Due Date *</label>
+      <input type="date" [formControl]="invoiceDueDate">
+    </div>
+  </div>
+
+  <div class="form-row tw-grid tw-grid-cols-3 tw-gap-4 tw-mt-4">
+    <div class="form-group">
+      <label>PO Date *</label>
+      <input type="date" [formControl]="poDate">
+    </div>
+    <div class="form-group">
+      <label>Currency *</label>
+      <select [formControl]="currency">
+        <option *ngFor="let c of currancies" [value]="c.value">{{ c.view }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Invoice Terms *</label>
+      <select [formControl]="invoiceTerms">
+        <option *ngFor="let t of terms" [value]="t.value">{{ t.view }}</option>
+      </select>
+    </div>
+  </div>
+
+</div>

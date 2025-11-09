@@ -1,0 +1,125 @@
+<div class="section-card">
+  <div class="section-card-content">
+    <div class="section-header">
+      <span>Shipment Detail</span>
+      <button class="section-save-btn" type="button" (click)="onSave()">Save</button>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-header">
+        <h3 class="sub-section-icon">📦</h3>
+        <h3 class="sub-section-title">Payment & Order Details</h3>
+      </div>
+
+      <div class="section-content">
+        <form [formGroup]="transactionForm">
+          <!-- Payment Term -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Payment Term</mat-label>
+            <mat-select formControlName="paymentTerm" (selectionChange)="onPaymentTermChange($event)">
+              <mat-option value="">Select</mat-option>
+              <mat-option *ngFor="let type of paymentTerms" [value]="type.typeValue">
+                {{ type.typeDisplayValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Original PO Number -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Original PO Number</mat-label>
+            <input matInput formControlName="origPono" placeholder="Original PO Number" />
+          </mat-form-field>
+
+          <!-- Source System -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Source System</mat-label>
+            <input matInput formControlName="sourceSystem" placeholder="Source System" />
+          </mat-form-field>
+
+          <!-- Business Unit -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Business Unit</mat-label>
+            <input matInput formControlName="buCode" placeholder="Business Unit" />
+          </mat-form-field>
+
+          <!-- Freight Terms -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Freight Terms</mat-label>
+            <mat-select formControlName="freightTerm">
+              <mat-option value="">Select</mat-option>
+              <mat-option value="CFR">Cost and Freight</mat-option>
+              <mat-option value="CIF">Cost, Insurance and Freight</mat-option>
+              <mat-option value="CPT">Carriage Paid To</mat-option>
+              <mat-option value="CIP">Carriage and Insurance Paid To</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Manual Hold Flag -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Manual Hold Flag</mat-label>
+            <mat-select formControlName="manualHold">
+              <mat-option value="">Select Status</mat-option>
+              <mat-option value="Y">Yes</mat-option>
+              <mat-option value="N">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Notes -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Notes</mat-label>
+            <textarea matInput formControlName="notes" placeholder="Notes"></textarea>
+          </mat-form-field>
+
+          <!-- Customs Currency -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Customs Currency</mat-label>
+            <mat-select formControlName="homeCurrency">
+              <mat-option value="">Select</mat-option>
+              <mat-option *ngFor="let type of countryArray" [value]="type.countryCode + '-' + type.currency">
+                {{ type.name }} - ({{ type.currency }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+
+      <!-- Save Mode -->
+      <div class="sub-section" *ngIf="saveMode">
+        <div class="read-only">
+          <div>
+            <p class="read-only-label">Payment Term</p>
+            <p>{{ saveData?.paymentTerm }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Original PO Number</p>
+            <p>{{ saveData?.origPono }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Source System</p>
+            <p>{{ saveData?.sourceSystem }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Business Unit</p>
+            <p>{{ saveData?.buCode }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Freight Terms</p>
+            <p>{{ saveData?.freightTerm }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Manual Hold Flag</p>
+            <p>{{ saveData?.manualHold }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Notes</p>
+            <p>{{ saveData?.notes }}</p>
+          </div>
+          <div>
+            <p class="read-only-label">Customs Currency</p>
+            <p>{{ saveData?.homeCurrency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

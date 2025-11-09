@@ -1,0 +1,29 @@
+<div class="tw-h-screen tw-flex tw-items-center tw-justify-center tw-bg-gray-100">
+  <div class="tw-bg-white tw-shadow-lg tw-rounded-2xl tw-p-8 tw-w-96">
+    <h2 class="tw-text-2xl tw-font-bold tw-text-center tw-mb-6">Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="tw-space-y-4">
+      <!-- Username -->
+      <div>
+        <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Username</label>
+        <input formControlName="username" type="text"
+          class="tw-mt-1 tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-px-3 tw-py-2 focus:tw-ring-2 focus:tw-ring-blue-500 focus:tw-outline-none">
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Password</label>
+        <input formControlName="password" type="password"
+          class="tw-mt-1 tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-px-3 tw-py-2 focus:tw-ring-2 focus:tw-ring-blue-500 focus:tw-outline-none">
+      </div>
+
+      <!-- Submit -->
+      <button type="submit"
+        class="tw-w-full tw-bg-blue-600 tw-text-white tw-py-2 tw-rounded-lg hover:tw-bg-blue-700 tw-transition">
+        Login
+      </button>
+    </form>
+  </div>
+
+
+</div>

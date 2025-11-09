@@ -1,1 +1,378 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ /* license-tracking-wizard */
+        :root {
+
+            /* ===== BASE PALETTE ===== */
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-400: #CBD5E1;
+            --gray-600: #475569;
+            --gray-800: #1E293B;
+            --blue-50: #EFF6FF;
+            --blue-100: #DBEAFE;
+            --blue-500: #3B82F6;
+            --blue-700: #1D4ED8;
+            --orange-500: #F97316;
+            --orange-600: #EA580C;
+            --green-500: #22C55E;
+            --red-500: #EF4444;
+            --amber-500: #F59E0B;
+            --teal-500: #14B8A6;
+
+            /* ===== BACKGROUNDS - Foundation Layer ===== */
+            --bg: var(--gray-50);            /* Page background */
+            --card: var(--white);            /* Main cards */
+            --surface-sub: var(--gray-100);  /* Sub-containers */
+            --surface-title: var(--gray-100);/* Section headers */
+            --surface-subtitle: var(--gray-50); /* Subsection headers */
+            --surface-table-header: var(--gray-100); /* Table headers */
+            --surface-table-alt: var(--gray-50); /* Alternate table rows */
+
+            /* ===== TEXT - Semantic Hierarchy ===== */
+            --text: var(--gray-800);         /* Base text */
+            --text-primary: var(--gray-800); /* Primary text - Headings */
+            --text-secondary: var(--gray-600); /* Secondary text - Body */
+            --text-muted: var(--gray-600);   /* Muted text - Labels */
+            --placeholder: var(--gray-600);  /* Placeholder text */
+            --muted: var(--gray-600);        /* Utility - muted elements */
+
+            /* ===== BRAND COLORS - Orange for CTA Only ===== */
+            --brand: var(--orange-500);      /* Primary brand - Orange CTA */
+            --brand-primary: var(--orange-500); /* Orange - Main actions */
+            --brand-primary-hover: var(--orange-600); /* Orange hover */
+            --brand-700: var(--orange-600);  /* Orange dark variant */
+            --brand-secondary: var(--blue-500); /* Blue - Links & focus */
+            --brand-secondary-hover: var(--blue-700); /* Blue hover */
+
+            /* ===== STATUS COLORS - WCAG Compliant ===== */
+            --status-success: var(--green-500);
+            --status-success-bg: #ECFDF5;
+            --status-success-text: var(--green-500);
+            --status-success-border: var(--green-500);
+
+            --status-warning: var(--amber-500);
+            --status-warning-bg: #FFFBEB;
+            --status-warning-text: var(--amber-500);
+            --status-warning-border: var(--amber-500);
+
+            --danger: var(--red-500);
+            --status-error: var(--red-500);
+            --status-error-bg: #FEF2F2;
+            --status-error-text: var(--red-500);
+            --status-error-border: var(--red-500);
+
+            --status-info-bg: #F0FDFA;
+            --status-info-text: var(--teal-500);
+            --status-info-border: var(--teal-500);
+
+            /* ===== BORDERS - Subtle to Strong ===== */
+            --border: var(--gray-200);       /* Default borders */
+            --border-light: var(--gray-100); /* Light borders */
+            --border-default: var(--gray-200); /* Standard borders */
+            --border-strong: var(--gray-400); /* Strong borders */
+            --border-cell: var(--gray-200);  /* Table cell borders */
+
+            /* ===== SECTION THEME ===== */
+            --section-primary: var(--blue-500); /* Section accent - Blue */
+            --section-primary-700: var(--blue-700); /* Section accent dark */
+            --section-bg: var(--gray-50);    /* Section background */
+            --section-border: var(--gray-200); /* Section borders */
+            --section-text: var(--gray-800); /* Section text */
+
+            /* ===== TINTS - Subtle Backgrounds ===== */
+            --tint-brand: rgba(59, 130, 246, 0.1); /* Blue tint 10% */
+            --tint-success: rgba(34, 197, 94, 0.1); /* Green tint */
+            --tint-danger: rgba(239, 68, 68, 0.1); /* Red tint */
+            --tint-blue: var(--blue-50);     /* Info tint */
+
+            /* ===== BRAND TINTS - Blue Focus ===== */
+            --brand-tint-10: var(--blue-50);
+            --brand-tint-16: var(--blue-100);
+            --brand-tint-35: var(--blue-100);
+
+            /* ===== TABLE INTERACTIONS ===== */
+            --table-hover: var(--blue-50);   /* Table row hover - Blue */
+            --table-active: var(--blue-100); /* Table row active - Blue */
+
+            /* ===== SHADOWS - Elevation System ===== */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+            /* ===== SPECIAL - Focus & Effects ===== */
+            --focus-ring: rgba(59, 130, 246, 0.3); /* Blue focus ring */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg);
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+/* license-wizard */
+        
+       :root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray-10: #f2f4f8;
+    --gray-20: #dde1e6;
+    --gray-30: #c1c7cd;
+    --gray-40: #a2a9b0;
+    --gray-50: #878d96;
+    --gray-60: #697077;
+    --gray-70: #4d5358;
+    --gray-80: #343a3f;
+    --gray-90: #21272a;
+    --gray-100: #121619;
+    --blue-50: #EFF6FF;
+    --blue-100: #DBEAFE;
+    --blue-500: #3B82F6;
+    --blue-700: #1D4ED8;
+    --green-carbon-10: #defbe6;
+    --green-carbon-20: #a7f0ba;
+    --green-carbon-30: #6fdc8c;
+    --green-carbon-40: #42be65;
+    --green-carbon-50: #24a148;
+    --green-carbon-60: #198038;
+    --green-carbon-70: #0e6027;
+    --green-carbon-80: #044317;
+    --green-carbon-90: #022d0d;
+    --green-carbon-100: #071908;
+    --orange-500: #F97316;
+    --orange-600: #EA580C;
+    --green-500: #22C55E;
+    --red-500: #EF4444;
+    --amber-500: #F59E0B;
+    --teal-500: #14B8A6;
+    --bg: var(--gray-10);
+    --card: var(--white);
+    --surface-sub: var(--gray-20);
+    --surface-title: var(--gray-20);
+    --surface-subtitle: var(--gray-10);
+    --surface-table-header: var(--gray-20);
+    --surface-table-alt: var(--gray-10);
+    --text: var(--gray-100);
+    --text-primary: var(--gray-100);
+    --text-secondary: var(--gray-70);
+    --text-muted: var(--gray-60);
+    --placeholder: var(--gray-60);
+    --muted: var(--gray-60);
+    --brand: var(--orange-500);
+    --brand-primary: var(--orange-500);
+    --brand-primary-hover: var(--orange-600);
+    --brand-700: var(--orange-600);
+    --brand-secondary: var(--blue-500);
+    --brand-secondary-hover: var(--blue-700);
+    --status-success: var(--green-500);
+    --status-success-bg: #ECFDF5;
+    --status-success-text: var(--green-500);
+    --status-success-border: var(--green-500);
+    --status-warning: var(--amber-500);
+    --status-warning-bg: #FFFBEB;
+    --status-warning-text: var(--amber-500);
+    --status-warning-border: var(--amber-500);
+    --danger: var(--red-500);
+    --status-error: var(--red-500);
+    --status-error-bg: #FEF2F2;
+    --status-error-text: var(--red-500);
+    --status-error-border: var(--red-500);
+    --status-info-bg: var(--gray-10);
+    --status-info-text: var(--gray-100);
+    --status-info-border: var(--gray-50);
+    --border: var(--gray-30);
+    --border-light: var(--gray-20);
+    --border-default: var(--gray-30);
+    --border-strong: var(--gray-50);
+    --border-cell: var(--gray-30);
+    --section-primary: var(--blue-500);
+    --section-primary-700: var(--blue-700);
+    --section-bg: var(--gray-10);
+    --section-border: var(--gray-30);
+    --section-text: var(--gray-100);
+    --tint-brand: rgba(59, 130, 246, 0.1);
+    --tint-success: rgba(34, 197, 94, 0.1);
+    --tint-danger: rgba(239, 68, 68, 0.1);
+    --tint-blue: var(--blue-50);
+    --brand-tint-10: var(--blue-50);
+    --brand-tint-16: var(--blue-100);
+    --brand-tint-35: var(--blue-100);
+    --table-hover: var(--blue-50);
+    --table-active: var(--blue-100);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --focus-ring: rgba(59, 130, 246, 0.3);
+
+
+            /* ===== BACKGROUNDS - Foundation Layer ===== */
+            --bg: var(--gray-10);            /* Page background */
+            --card: var(--white);            /* Main cards */
+            --surface-sub: var(--gray-20);  /* Sub-containers */
+            --surface-title: var(--gray-20);/* Section headers */
+            --surface-subtitle: var(--gray-10); /* Subsection headers */
+            --surface-table-header: var(--gray-20); /* Table headers */
+            --surface-table-alt: var(--gray-10); /* Alternate table rows */
+
+            /* ===== TEXT - Semantic Hierarchy ===== */
+            --text: var(--gray-100);         /* Base text */
+            --text-primary: var(--gray-100); /* Primary text - Headings */
+            --text-secondary: var(--gray-70); /* Secondary text - Body */
+            --text-muted: var(--gray-60);   /* Muted text - Labels */
+            --placeholder: var(--gray-60);  /* Placeholder text */
+            --muted: var(--gray-60);        /* Utility - muted elements */
+
+            /* ===== BRAND COLORS - Orange for CTA Only ===== */
+            --brand: var(--orange-500);      /* Primary brand - Orange CTA */
+            --brand-primary: var(--orange-500); /* Orange - Main actions */
+            --brand-primary-hover: var(--orange-600); /* Orange hover */
+            --brand-700: var(--orange-600);  /* Orange dark variant */
+            --brand-secondary: var(--blue-500); /* Blue - Links & focus */
+            --brand-secondary-hover: var(--blue-700); /* Blue hover */
+
+            /* ===== STATUS COLORS - WCAG Compliant ===== */
+            --status-success: var(--green-500);
+            --status-success-bg: #ECFDF5;
+            --status-success-text: var(--green-500);
+            --status-success-border: var(--green-500);
+
+            --status-warning: var(--amber-500);
+            --status-warning-bg: #FFFBEB;
+            --status-warning-text: var(--amber-500);
+            --status-warning-border: var(--amber-500);
+
+            --danger: var(--red-500);
+            --status-error: var(--red-500);
+            --status-error-bg: #FEF2F2;
+            --status-error-text: var(--red-500);
+            --status-error-border: var(--red-500);
+
+            --status-info-bg: var(--gray-10);
+            --status-info-text: var(--gray-100);
+            --status-info-border: var(--gray-50);
+
+            /* ===== BORDERS - Subtle to Strong ===== */
+            --border: var(--gray-30);       /* Default borders */
+            --border-light: var(--gray-20); /* Light borders */
+            --border-default: var(--gray-30); /* Standard borders */
+            --border-strong: var(--gray-50); /* Strong borders */
+            --border-cell: var(--gray-30);  /* Table cell borders */
+
+            /* ===== SECTION THEME ===== */
+            --section-primary: var(--blue-500); /* Section accent - Blue */
+            --section-primary-700: var(--blue-700); /* Section accent dark */
+            --section-bg: var(--gray-10);    /* Section background */
+            --section-border: var(--gray-30); /* Section borders */
+            --section-text: var(--gray-100); /* Section text */
+
+            /* ===== TINTS - Subtle Backgrounds ===== */
+            --tint-brand: rgba(59, 130, 246, 0.1); /* Blue tint 10% */
+            --tint-success: rgba(34, 197, 94, 0.1); /* Green tint */
+            --tint-danger: rgba(239, 68, 68, 0.1); /* Red tint */
+            --tint-blue: var(--blue-50);     /* Info tint */
+
+            /* ===== BRAND TINTS - Blue Focus ===== */
+            --brand-tint-10: var(--blue-50);
+            --brand-tint-16: var(--blue-100);
+            --brand-tint-35: var(--blue-100);
+
+            /* ===== TABLE INTERACTIONS ===== */
+            --table-hover: var(--blue-50);   /* Table row hover - Blue */
+            --table-active: var(--blue-100); /* Table row active - Blue */
+
+            /* ===== SHADOWS - Elevation System ===== */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+            /* ===== SPECIAL - Focus & Effects ===== */
+            --focus-ring: rgba(59, 130, 246, 0.3); /* Blue focus ring */
+        }
+       
+    
+        /* TNx */
+
+        :root {
+    /* Base Palette */
+    --white: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #CBD5E1;
+    --gray-600: #475569;
+    --gray-800: #1E293B;
+    --blue-50: #EFF6FF;
+    --blue-100: #DBEAFE;
+    --blue-500: #3B82F6;
+    --blue-700: #1D4ED8;
+    --magenta-10: #fff0f7;
+    --magenta-20: #ffd6e8;
+    --magenta-30: #ffafd2;
+    --magenta-40: #ff7eb6;
+    --magenta-50: #ee5396;
+    --magenta-60: #d02670;
+    --magenta-70: #9f1853;
+    --orange-500: #F97316;
+    --orange-600: #EA580C;
+    --green-500: #22C55E;
+    --amber-500: #F59E0B;
+
+    /* Backgrounds */
+    --bg: var(--gray-50);
+    --card: var(--white);
+    --surface-sub: var(--gray-100);
+
+    /* Text */
+    --text: var(--gray-800);
+    --text-primary: var(--gray-800);
+    --text-secondary: var(--gray-600);
+    --text-muted: var(--gray-600);
+
+    /* Brand Colors */
+    --brand-primary: var(--orange-500);
+    --brand-primary-hover: var(--orange-600);
+
+    /* Borders */
+    --border: var(--gray-200);
+    --border-default: var(--gray-200);
+    --border-strong: var(--gray-400);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Tints */
+    --tint-brand: rgba(59, 130, 246, 0.1);
+
+    /* Additional Colors for Data Cards */
+    --gray-20: #dde1e6;
+    --gray-30: #c1c7cd;
+    --border-light: var(--gray-200);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--bg);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 14px;
+}

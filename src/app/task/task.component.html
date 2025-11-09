@@ -1,0 +1,255 @@
+<div class="section-card">
+  <div class="section-card-content">
+    <div class="section-header">
+      <span>Shipment Detail</span>
+      <button
+        *ngIf="editMode"
+        class="section-save-btn"
+        type="button"
+        (click)="onSave()"
+      >
+        Save
+      </button>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-header">
+        <h3 class="sub-section-icon">📋</h3>
+        <h3 class="sub-section-title">Purchase Order</h3>
+      </div>
+
+      <div class="section-content">
+        <form [formGroup]="transactionForm">
+          <!-- Purchase Order Number -->
+          <mat-form-field appearance="outline">
+            <mat-label>Purchase Order Number*</mat-label>
+            <input
+              matInput
+              formControlName="trnId"
+              placeholder="Enter PO Number"
+            />
+          </mat-form-field>
+          <!-- Revision Number -->
+          <mat-form-field appearance="outline">
+            <mat-label>Rev Number</mat-label>
+            <input
+              matInput
+              formControlName="revisionNo"
+              placeholder="Enter Rev Number"
+            />
+          </mat-form-field>
+
+          <!-- Purchase Order Date -->
+          <mat-form-field appearance="outline">
+            <mat-label>PO Date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="poDate"
+              formControlName="trnDate"
+              placeholder="Select Date"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="poDate"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #poDate></mat-datepicker>
+          </mat-form-field>
+
+          <!-- Purchase Order Type -->
+          <mat-form-field appearance="outline">
+            <mat-label>PO Type</mat-label>
+            <input
+              matInput
+              formControlName="poType"
+              placeholder="Enter PO Type"
+            />+++
+          </mat-form-field>
+
+          <!-- Export Country -->
+          <mat-form-field appearance="outline">
+            <mat-label>Country of Export</mat-label>
+            <input
+              matInput
+              formControlName="coe"
+              placeholder="Enter Country of Export"
+            />
+          </mat-form-field>
+
+          <!-- PO Value -->
+          <mat-form-field appearance="outline">
+            <mat-label>PO Value</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="trnTotal"
+              placeholder="Enter PO Value"
+            />
+          </mat-form-field>
+          <!-- Currency -->
+          <mat-form-field appearance="outline">
+            <mat-label>Currency</mat-label>
+            <input
+              matInput
+              formControlName="currency"
+              placeholder="Enter Currency"
+            />
+          </mat-form-field>
+
+          <!-- MMV -->
+          <mat-form-field appearance="outline">
+            <mat-label>MMV</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="mmvTotal"
+              placeholder="Enter MMV"
+            />
+          </mat-form-field>
+
+          <!-- Import Country -->
+          <mat-form-field appearance="outline">
+            <mat-label>Country of Import Or Destination</mat-label>
+            <input
+              matInput
+              formControlName="coi"
+              placeholder="Enter Country of Import Or Destination"
+            />
+          </mat-form-field>
+          <!-- NDC -->
+          <mat-form-field appearance="outline">
+            <mat-label>NDC(-)</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="ndcTotal"
+              placeholder="Enter NDC(-)"
+            />
+          </mat-form-field>
+
+          <!-- Incoterm -->
+          <mat-form-field appearance="outline">
+            <mat-label>Incoterm</mat-label>
+            <input
+              matInput
+              formControlName="incoterm"
+              placeholder="Enter Incoterm"
+            />
+          </mat-form-field>
+
+          <!-- Exchange Rate -->
+          <mat-form-field appearance="outline">
+            <mat-label>Exchange Rate</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="exchangeRate"
+              placeholder="Enter Exchange Rate"
+            />
+          </mat-form-field>
+          <!-- Mode of Transport -->
+          <mat-form-field appearance="outline">
+            <mat-label>Mode of Transport</mat-label>
+            <input
+              matInput
+              formControlName="motCd"
+              placeholder="Enter Mode of Transport"
+            />
+          </mat-form-field>
+
+          <!-- Total Duty -->
+          <mat-form-field appearance="outline">
+            <mat-label>Total Duty</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="dutyTotal"
+              placeholder="Enter Total Duty"
+            />
+          </mat-form-field>
+
+          <!-- Dutiable Value -->
+          <mat-form-field appearance="outline">
+            <mat-label>Dutiable Value</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="dutiableVal"
+              placeholder="Enter Dutiable Value"
+            />
+          </mat-form-field>
+        </form>
+        <!-- ---------------- PURCHASE ORDER (SAVE MODE) ---------------- -->
+        
+        <div class="sub-section" *ngIf="saveMode">
+          <!-- <div class="sub-section-header">
+            <h3 class="sub-section-icon">📋</h3>
+            <h3 class="sub-section-title">Purchase Order</h3>
+          </div> -->
+
+          <div class="read-only">
+            <div>
+              <p class="read-only-label">Purchase Order Number</p>
+              <p>{{ saveData?.trnId }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Rev No</p>
+              <p>{{ saveData?.revisionNo }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">PO Date</p>
+              <p>{{ saveData?.trnDate | date : "dd-MM-yyyy" }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">PO Type</p>
+              <p>{{ saveData?.poType }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Country of Export</p>
+              <p>{{ saveData?.coe }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">PO Value</p>
+              <p>{{ saveData?.trnTotal }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Currency</p>
+              <p>{{ saveData?.currency }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">MMV(+)</p>
+              <p>{{ saveData?.mmvTotal }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Country of Import or Destination</p>
+              <p>{{ saveData?.coi }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">NDC(-)</p>
+              <p>{{ saveData?.ndcTotal }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Incoterm</p>
+              <p>{{ saveData?.incoterm }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Exchange Rate</p>
+              <p>{{ saveData?.exchangeRate }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Mode of Transport</p>
+              <p>{{ saveData?.motCd }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Total Duty</p>
+              <p>{{ saveData?.dutyTotal }}</p>
+            </div>
+            <div>
+              <p class="read-only-label">Dutiable Value</p>
+              <p>{{ saveData?.dutiableVal }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+
+<div class="container">
+  <h2> Choose a Color for Your Card</h2>
+
+  <!-- Color Picker Input -->
+  <input type="color" [(ngModel)]="selectedColor" class="color-input" />
+
+  <p>{{ colorMessage }}</p>
+
+  <!-- Preview Card -->
+  <div class="color-card" [style.background]="selectedColor">
+    <h3>Live Preview</h3>
+    <p>This card's background changes instantly!</p>
+  </div>
+</div>

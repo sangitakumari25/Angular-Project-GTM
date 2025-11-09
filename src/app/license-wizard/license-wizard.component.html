@@ -1,0 +1,462 @@
+
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-section">
+      <span class="company-name">Partner Details</span>
+    </div>
+    <div class="nav-actions">
+      <!-- Add inside .nav-actions maybe -->
+<input 
+  type="color" 
+  [value]="headingColor" 
+  (input)="changeColor($event)" 
+  title="Change heading color" 
+  style="cursor:pointer; width: 40px; height: 40px; border: none; background: transparent;"
+/>
+      <button class="btn-back">Back to List</button>
+      <button class="btn-primary">+ Add New</button>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<!-- Main Summary Layout -->
+<div class="summary-layout">
+
+  <!-- Left Side - 25% Width -->
+  <div class="summary-left">
+    <div class="summary-card">
+      <div class="summary-header">
+       <div class="summary-title" [style.color]="headingColor">Partner Overview</div>
+        <button class="btn-edit" (click)="handleEdit()">Edit</button>
+      </div>
+      <div class="summary-body">
+        <!-- Company Icon and Name -->
+        <div style="padding: 8px 0 16px 0;">
+          <div style="font-size: 96px; line-height: 1; margin-bottom: 20px;">
+            📦
+          </div>
+          <div>
+            <div style="font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 4px;">
+              Product ID: SYS-2G4-1PK-T2
+            </div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
+              AeroLink GS2450 Telemetry System
+            </div>
+            <div style="font-size: 13px; font-weight: 400; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">
+              Advanced ground station telemetry system operating at 2.45GHz frequency, providing reliable real-time data transmission and remote control capabilities for unmanned aerial vehicles.
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; color: var(--gray-80);">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span style="font-size: 14px; font-weight: 400; color: var(--text-muted);">Country of Origin:</span>
+                <span style="font-size: 14px; font-weight: 600; color: var(--text-primary); display: flex; align-items: center; gap: 6px;">
+                  <span style="display: inline-block; width: 20px; height: 14px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%3E%3Cpath fill='%23b22234' d='M0 0h7410v3900H0z'/%3E%3Cpath d='M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0' stroke='%23fff' stroke-width='300'/%3E%3Cpath fill='%233c3b6e' d='M0 0h2964v2100H0z'/%3E%3C/svg%3E&quot;); background-size: cover; border-radius: 2px;"></span>
+                  United States
+                </span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; color: var(--gray-80);">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                <span style="font-size: 14px; font-weight: 400; color: var(--text-muted);">Manufactured By:</span>
+                <span style="font-size: 14px; font-weight: 600; color: var(--text-primary);">AeroTech Systems Inc.</span>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span style="display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 600; background: #000; color: #fff; text-transform: uppercase; letter-spacing: 0.5px;">
+                  Active
+                </span>
+                <span style="display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 600; background: var(--green-carbon-40); color: #fff; text-transform: uppercase; letter-spacing: 0.5px;">
+                  Open
+                </span>
+              </div>
+            </div>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-default);">
+              <div style="font-size: 32px; font-weight: 700; color: var(--gray-90); line-height: 1;">
+                $1352.00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dimensions & Weights -->
+        <div class="summary-section">
+          <div class="summary-section-title">Dimensions & Weights</div>
+          <div class="summary-item">
+            <span class="summary-key">Net Weight</span>
+            <span class="summary-value">1.25 kg</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Gross Weight</span>
+            <span class="summary-value">1.45 kg</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Weight UOM</span>
+            <span class="summary-value">kg</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Length × Width × Height</span>
+            <span class="summary-value">24 × 18 × 10 cm</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Dimension UOM</span>
+            <span class="summary-value">cm</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Volume / Gross Volume</span>
+            <span class="summary-value">0.0043 m³</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Volume UOM</span>
+            <span class="summary-value">m³</span>
+          </div>
+        </div>
+
+        <!-- Creation Info -->
+        <div class="summary-section">
+          <div class="summary-section-title">Creation Info</div>
+          <div class="summary-item">
+            <span class="summary-key">Created By</span>
+            <span class="summary-value">rcadmin@workseer.com</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Created Date</span>
+            <span class="summary-value">06-12-2025 14:20:17</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Modified By</span>
+            <span class="summary-value">rcadmin@workseer.com</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">Modified Date</span>
+            <span class="summary-value">06-19-2025 22:27:05</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-key">BU Name</span>
+            <span class="summary-value">MAIN BU</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle Column - Flexible Width -->
+  <div class="summary-middle">
+    <!-- Performance Metrics -->
+    <div class="data-card" style="margin-bottom: 24px; width: 100%; border: none; box-shadow: none;">
+      <div class="data-card-body">
+        <div style="display: flex; gap: 24px; align-items: stretch;">
+          <!-- Total Product Revenue -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 16px; background: var(--card); border: 1px solid var(--border-default); border-radius: 6px;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--gray-90); line-height: 1;">
+              $2.4 M
+            </div>
+            <div style="font-size: 13px; font-weight: 400; color: #000000; letter-spacing: 0.5px;">
+              Total Product Revenue<br/>(YTD)
+            </div>
+          </div>
+
+          <!-- Total Units Shipped -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 16px; background: var(--card); border: 1px solid var(--border-default); border-radius: 6px;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--gray-90); line-height: 1;">
+              12,480
+            </div>
+            <div style="font-size: 13px; font-weight: 400; color: #000000; letter-spacing: 0.5px;">
+              Total Units Shipped<br/>(YTD)
+            </div>
+          </div>
+
+          <!-- Average Selling Price -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 16px; background: var(--card); border: 1px solid var(--border-default); border-radius: 6px;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--gray-90); line-height: 1;">
+              $192
+            </div>
+            <div style="font-size: 13px; font-weight: 400; color: #000000; letter-spacing: 0.5px;">
+              Average Selling Price (per Unit)
+            </div>
+          </div>
+
+          <!-- Export Destination Countries -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 16px; background: var(--card); border: 1px solid var(--border-default); border-radius: 6px;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--gray-90); line-height: 1;">
+              18
+            </div>
+            <div style="font-size: 13px; font-weight: 400; color: #000000; letter-spacing: 0.5px;">
+              Export Destination Countries
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- First Row: Control Regimes, End Use & Safety Classification, and New Card -->
+    <div style="display: flex; gap: 24px; margin-bottom: 24px; align-items: stretch;">
+
+      <!-- Control Regimes Card - 1/3 width -->
+      <div style="flex: 1;">
+        <div class="data-card" style="height: 100%; display: flex; flex-direction: column;">
+          <div class="data-card-header data-card-header-lines">
+           <div class="data-card-title" [style.color]="headingColor">Control Regimes</div>
+          </div>
+          <div class="data-card-body">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+              <!-- CCD -->
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px; cursor: pointer; accent-color: #000" />
+                <span style="font-size: 14px; color: var(--text-primary)">CCD</span>
+              </label>
+
+              <!-- NP -->
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px; cursor: pointer; accent-color: #000" />
+                <span style="font-size: 14px; color: var(--text-primary)">NP</span>
+              </label>
+
+              <!-- CB -->
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px; cursor: pointer; accent-color: #000" />
+                <span style="font-size: 14px; color: var(--text-primary)">CB</span>
+              </label>
+
+              <!-- MT -->
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px; cursor: pointer; accent-color: #000" />
+                <span style="font-size: 14px; color: var(--text-primary)">MT</span>
+              </label>
+
+              <!-- Dual-Use -->
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px; cursor: pointer; accent-color: #000" />
+                <span style="font-size: 14px; color: var(--text-primary)">Dual-Use</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Use & Safety Classification Card - 1/3 width -->
+      <div style="flex: 1;">
+        <div class="data-card" style="height: 100%; display: flex; flex-direction: column;">
+          <div class="data-card-header data-card-header-lines">
+            <div class="data-card-title">End Use & Safety Classification</div>
+          </div>
+          <div class="data-card-body">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 400; color: var(--text-muted)">End Use</span>
+                <span style="font-size: 14px; font-weight: 600; color: var(--text-primary)">Production</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 400; color: var(--text-muted)">Hazardous</span>
+                <span style="font-size: 14px; font-weight: 600; color: var(--text-primary)">No</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hazmat Details Card - 1/3 width -->
+      <div style="flex: 1;">
+        <div class="data-card" style="height: 100%; display: flex; flex-direction: column;">
+          <div class="data-card-header data-card-header-lines">
+            <div class="data-card-title">Hazmat Details</div>
+          </div>
+          <div class="data-card-body">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 400; color: var(--text-muted)">Hazmat Code</span>
+                <span style="font-size: 14px; font-weight: 600; color: var(--text-primary)">UN3481</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 400; color: var(--text-muted)">Mode of Transport</span>
+                <span style="font-size: 14px; font-weight: 600; color: var(--text-primary)">Air</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Second Row: Classification Codes and Product Components -->
+    <div style="display: flex; gap: 24px; margin-bottom: 24px; align-items: stretch;">
+
+      <!-- Classification Codes Card - 1/3 width -->
+      <div style="flex: 1;">
+        <div class="data-card" style="height: 100%; display: flex; flex-direction: column;">
+          <div class="data-card-header data-card-header-lines">
+            <div class="data-card-title">Classification Codes</div>
+          </div>
+          <div class="data-card-body">
+            <!-- Export HS Code -->
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">
+                Export HS Code: <span style="font-weight: 700; color: var(--gray-80)">8517620090</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 400; color: var(--text-secondary); line-height: 1.5;">
+                Export HS Description: Wireless communication apparatus for data, voice, or image transmission.
+              </div>
+            </div>
+            <hr style="border: none; border-top: 1px solid var(--border-default); margin: 0 0 16px 0" />
+
+            <!-- Import HS Code -->
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">
+                Import HS Code: <span style="font-weight: 700; color: var(--gray-80)">85176200</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 400; color: var(--text-secondary); line-height: 1.5;">
+                Import HS Description: Communication equipment for wired or wireless networks.
+              </div>
+            </div>
+            <hr style="border: none; border-top: 1px solid var(--border-default); margin: 0 0 16px 0" />
+
+            <!-- ECCN -->
+            <div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">
+                ECCN: <span style="font-weight: 700; color: var(--gray-80)">5A991.b</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 400; color: var(--text-secondary); line-height: 1.5;">
+                ECCN Description: Commercial telecommunication equipment not under 5A001.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Components Card - 2/3 width -->
+      <div style="flex: 2;">
+        <div class="data-card" style="height: 100%; display: flex; flex-direction: column;">
+          <div class="data-card-header data-card-header-lines">
+            <div class="data-card-title">Product Components</div>
+          </div>
+          <div class="data-card-body">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                  <th>COO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>50195</strong></td>
+                  <td>ASSEMBLY, TAC, GROUND STATION, PMDDL2450</td>
+                  <td>Major Component</td>
+                  <td>USA</td>
+                </tr>
+                <tr>
+                  <td><strong>50242</strong></td>
+                  <td>ASSEMBLY, PROP, CW, MK1.5</td>
+                  <td>Major Component</td>
+                  <td>CHN</td>
+                </tr>
+                <tr>
+                  <td><strong>60104</strong></td>
+                  <td>DOC, OP, ANDROID 14 UPDATE GUIDE</td>
+                  <td>Documentation</td>
+                  <td>USA</td>
+                </tr>
+                <tr>
+                  <td><strong>60211</strong></td>
+                  <td>CIRCUIT BOARD, POWER MOD, 12V</td>
+                  <td>Sub Component</td>
+                  <td>CHN</td>
+                </tr>
+                <tr>
+                  <td><strong>60315</strong></td>
+                  <td>CONNECTOR, SMA, HIGH GAIN</td>
+                  <td>Sub Component</td>
+                  <td>USA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Product Country - Full Width -->
+    <div class="data-card" style="width: 100%;">
+      <div class="data-card-header data-card-header-lines">
+        <div class="data-card-title">Product Country</div>
+        <button class="btn-add btn-add-blue">+ Add</button>
+      </div>
+      <div class="data-card-body">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Country of Export</th>
+              <th>Description</th>
+              <th>UOM</th>
+              <th>ECCN</th>
+              <th>Export HS</th>
+              <th>Import HS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>United States (US)</strong></td>
+              <td>SYSTEM, 2.4GHZ 1-PACK, TEAL 2</td>
+              <td>ea</td>
+              <td>5A991.b</td>
+              <td><strong>8517620090</strong></td>
+              <td><strong>8517620045</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Germany (DE)</strong></td>
+              <td>SYSTEM, 2.4GHZ 1-PACK, TEAL 2</td>
+              <td>ea</td>
+              <td>5A991</td>
+              <td><strong>8517620010</strong></td>
+              <td><strong>8517620095</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Japan (JP)</strong></td>
+              <td>SYSTEM, 2.4GHZ 1-PACK, TEAL 2</td>
+              <td>ea</td>
+              <td>5A991.c</td>
+              <td><strong>8517620025</strong></td>
+              <td><strong>8517620060</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Canada (CA)</strong></td>
+              <td>SYSTEM, 2.4GHZ 1-PACK, TEAL 2</td>
+              <td>ea</td>
+              <td>5A992.a</td>
+              <td><strong>8517620035</strong></td>
+              <td><strong>8517620080</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Right Side - 20vw Width -->
+  <div class="summary-right">
+    <div style="border: 1px solid var(--border-default); border-radius: 8px; padding: 20px; background: var(--card); height: 100%; display: flex; flex-direction: column;">
+      <div style="font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-default);">
+        Note
+      </div>
+      <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+        add use the existing design with this colour scheme and dont use colour of primary overveiw any where
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <img src="VinitEmptyStates.svg" alt="Empty State" style="width: 100%; max-width: 200px; opacity: 0.6" />
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

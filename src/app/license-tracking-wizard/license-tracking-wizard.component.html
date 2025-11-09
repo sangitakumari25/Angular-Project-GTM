@@ -1,0 +1,248 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-section">
+      <span class="company-name">License Tracking System</span>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-back">Back to List</button>
+      <button class="btn-primary">+ Add New</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container" *ngIf="!showSummary">
+  <div class="header-card">
+    <span>📜</span>
+    <div class="header-text">
+      <div class="header-title">License Tracking Wizard</div>
+      <div class="header-subtitle">Configure license tracking in 2 simple steps</div>
+    </div>
+  </div>
+
+  <!-- Progress Section -->
+  <div class="progress-card">
+    <div class="progress-nav">
+      <button class="progress-btn prev" [disabled]="currentStep === 1" (click)="prevStep()">← Previous Step</button>
+
+      <div class="step" [class.active]="isStepActive(1)" [class.completed]="isStepCompleted(1)">
+        <div class="step-content"><span class="step-number">1</span> License Document Information</div>
+      </div>
+
+      <div class="step" [class.active]="isStepActive(2)" [class.completed]="isStepCompleted(2)">
+        <div class="step-content"><span class="step-number">2</span> Tracking & Usage Configuration</div>
+      </div>
+
+      <ng-container *ngIf="currentStep === 1">
+        <button class="progress-btn next" (click)="nextStep()">Next Step ></button>
+      </ng-container>
+
+      <ng-container *ngIf="currentStep === 2">
+        <button class="progress-btn submit" (click)="onSubmit()">Submit</button>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Step 1 -->
+  <div *ngIf="currentStep === 1" class="form-card">
+    <h3 class="step-heading">Enter License Details</h3>
+    <form [formGroup]="licenseForm">
+      <div class="two-column-layout">
+        <!-- LEFT COLUMN -->
+        <div class="column column-left">
+          <div class="column-block">
+            <div class="column-header">📋 License Record Information</div>
+            <div class="column-body">
+              <div class="column-grid">
+                <div class="form-group">
+                  <label class="form-label required">License Reference Number</label>
+                  <input type="text" class="form-input" formControlName="licenseReference" placeholder="Enter license reference number" />
+                  <div *ngIf="licenseForm.get('licenseReference')?.touched && licenseForm.get('licenseReference')?.invalid" class="error-message">
+                    License Reference is required
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label required">Issuing Agency</label>
+                  <select class="form-select" formControlName="issuingAgency">
+                    <option value="">Select Issuing Agency</option>
+                    <option *ngFor="let agency of issuingAgencies" [value]="agency.value">{{ agency.viewValue }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="column-grid">
+                <div class="form-group">
+                  <label class="form-label required">Issue Date</label>
+                  <input type="date" class="form-input" formControlName="issueDate" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label required">Expiration Date</label>
+                  <input type="date" class="form-input" formControlName="expirationDate" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">License Description</label>
+                <textarea class="form-textarea" formControlName="licenseDescription" placeholder="Enter description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="column column-right">
+          <div class="column-block">
+            <div class="column-header">🌍 License Coverage & Holder Info</div>
+            <div class="column-body">
+              <div class="column-grid">
+                <div class="form-group">
+                  <label class="form-label required">Country of Export</label>
+                  <select class="form-select" formControlName="countryOfExport">
+                    <option value="">Select Country</option>
+                    <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label required">License Currency</label>
+                  <select class="form-select" formControlName="licenseCurrency">
+                    <option value="">Select</option>
+                    <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label required">Authorized Licensee</label>
+                <select class="form-select" formControlName="authorizedLicensee">
+                  <option value="">Select Role</option>
+                  <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Step 2 -->
+  <div *ngIf="currentStep === 2" class="form-card">
+    <h3 class="step-heading">Configure How You'll Track This License</h3>
+    <form [formGroup]="trackingForm">
+      <div class="two-column-layout">
+        <!-- LEFT COLUMN -->
+        <div class="column column-left">
+          <div class="column-block">
+            <div class="column-header">📊 Usage Tracking Setup</div>
+            <div class="column-body">
+              <div class="column-grid">
+                <div class="form-group">
+                  <label class="form-label required">Track Usage By</label>
+                  <div class="radio-group">
+                    <label><input type="radio" value="Party" formControlName="trackUsageBy" /> Party</label>
+                    <label><input type="radio" value="Country" formControlName="trackUsageBy" /> Country</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label required">Track Items By</label>
+                  <div class="radio-group">
+                    <label><input type="radio" value="ECCN" formControlName="trackItemsBy" /> ECCN</label>
+                    <label><input type="radio" value="HS Code" formControlName="trackItemsBy" /> HS Code</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label required">License Limit</label>
+                <div class="radio-group">
+                  <label><input type="radio" value="Value" formControlName="licenseLimit" /> Value Only</label>
+                  <label><input type="radio" value="Quantity" formControlName="licenseLimit" /> Quantity Only</label>
+                  <label><input type="radio" value="Both" formControlName="licenseLimit" /> Both</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label required">Decrement Type</label>
+                <select class="form-select" formControlName="decrementType">
+                  <option value="">Select Decrement Type</option>
+                  <option value="Delivery">Delivery</option>
+                  <option value="Pick Slip">Pick Slip</option>
+                  <option value="Sales Order">Sales Order</option>
+                  <option value="Shipment">Shipment</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="column column-right">
+          <div class="column-block">
+            <div class="column-header">⚙ Tracking Configuration</div>
+            <div class="column-body">
+              <div class="checkbox-wrapper">
+                <label class="checkbox-label">
+                  <input type="checkbox" formControlName="enableHeaderLevelTracking" (change)="toggleHeaderTracking()" />
+                  Enable Header-Level Tracking
+                  <div class="checkbox-description">
+                    Track single quantity and value for entire license
+                  </div>
+                </label>
+              </div>
+
+              <div *ngIf="trackingForm.get('enableHeaderLevelTracking')?.value" class="conditional-section">
+                <div class="column-grid">
+                  <div class="form-group">
+                    <label class="form-label required">Total Licensed Quantity</label>
+                    <input type="number" class="form-input" formControlName="totalLicensedQuantity" placeholder="Enter total licensed quantity" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Remaining Quantity Available</label>
+                    <input type="number" class="form-input" formControlName="remainingQuantityAvailable" readonly />
+                  </div>
+                </div>
+
+                <div class="column-grid">
+                  <div class="form-group">
+                    <label class="form-label required">Total Licensed Value</label>
+                    <input type="number" class="form-input" formControlName="totalLicensedValue" placeholder="Enter total licensed value" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Remaining Value Available</label>
+                    <input type="number" class="form-input" formControlName="remainingValueAvailable" readonly />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ Summary Screen -->
+<div *ngIf="showSummary" class="summary-screen">
+  <div class="summary-content">
+    <h2>✅ License Tracking Configuration Completed!</h2>
+    <p>Here's a summary of your license setup:</p>
+
+    <div class="summary-section">
+      <h3>License Information</h3>
+      <pre>{{ licenseForm.value | json }}</pre>
+    </div>
+
+    <div class="summary-section">
+      <h3>Tracking Configuration</h3>
+      <pre>{{ trackingForm.value | json }}</pre>
+    </div>
+
+    <button class="btn-primary" (click)="resetWizard()">← Back to Start</button>
+  </div>
+</div>
+<!-- =================================================================================================================================================== -->

@@ -1,0 +1,24 @@
+.container {
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.color-input {
+  width: 100px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.color-card {
+  width: 250px;
+  height: 150px;
+  margin: 30px auto;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}

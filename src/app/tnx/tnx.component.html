@@ -1,0 +1,3433 @@
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-section">
+      <span class="company-name">Transaction Overview</span>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-back">Back to List</button>
+      <button class="btn-primary">+ Add New</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- Full Width Top Div -->
+  <div
+    style="
+      width: 100%;
+      margin-bottom: 24px;
+      background: #ffffff;
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      display: flex;
+      align-items: stretch;
+    "
+  >
+    <div style="flex: 0 0 auto">
+      <img
+        src="assets\Untitled.png"
+        alt="Header"
+        style="height: 250px; width: auto; transform: scaleX(-1)"
+      />
+    </div>
+
+    <!-- Vertical Separator -->
+    <div style="width: 1px; background: var(--border-default)"></div>
+
+    <!-- Right Content Area -->
+    <div style="flex: 1; display: flex; flex-direction: column">
+      <!-- Top Section: Transaction ID & Progress Bar + Additional Div -->
+      <div style="display: flex; gap: 24px; padding: 20px">
+        <!-- Left: Transaction ID and Progress Bar -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px">
+          <!-- Transaction ID -->
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div
+              style="
+                font-size: 32px;
+                font-weight: 700;
+                color: var(--text-primary);
+              "
+            >
+              TXN-2024-089742
+            </div>
+            <button
+              onclick="navigator.clipboard.writeText('TXN-2024-089742')"
+              style="
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                color: var(--text-secondary);
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color='var(--text-primary)'"
+              onmouseout="this.style.color='var(--text-secondary)'"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+            </button>
+            <div
+              style="
+                padding: 6px 14px;
+                background: #10b981;
+                color: white;
+                font-size: 13px;
+                font-weight: 600;
+                border-radius: 20px;
+              "
+            >
+              Open
+            </div>
+          </div>
+          <!-- Progress Bar -->
+          <div style="width: 100%">
+            <div class="progress-bar-container">
+              <div class="progress-step" data-step="1">
+                <div
+                  class="step-circle"
+                  style="background-color: black; color: white"
+                >
+                  1
+                </div>
+                <div class="step-label">Add/Edit</div>
+              </div>
+              <div class="progress-line" data-line="1"></div>
+
+              <div class="progress-step" data-step="2">
+                <div
+                  class="step-circle"
+                  style="background-color: black; color: white"
+                >
+                  2
+                </div>
+                <div class="step-label">Data Validation</div>
+              </div>
+              <div class="progress-line" data-line="2"></div>
+
+              <div class="progress-step" data-step="3">
+                <div
+                  class="step-circle"
+                  style="background-color: black; color: white"
+                >
+                  3
+                </div>
+                <div class="step-label">RPS</div>
+              </div>
+              <div class="progress-line" data-line="3"></div>
+
+              <div class="progress-step" data-step="4">
+                <div
+                  class="step-circle"
+                  style="background-color: black; color: white"
+                >
+                  4
+                </div>
+                <div class="step-label">License Screening</div>
+              </div>
+              <div class="progress-line" data-line="4"></div>
+
+              <div class="progress-step" data-step="5">
+                <div
+                  class="step-circle"
+                  style="background-color: rgb(41, 156, 202); color: white"
+                >
+                  5
+                </div>
+                <div class="step-label">Documents</div>
+              </div>
+              <div class="progress-line" data-line="5"></div>
+
+              <div class="progress-step" data-step="6">
+                <div class="step-circle">6</div>
+                <div class="step-label">Complete/Overview</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Additional Info -->
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <!-- Top Row -->
+          <div style="display: flex; align-items: center; gap: 40px">
+            <!-- Calendar Icon -->
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: var(--text-secondary); flex-shrink: 0"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+
+            <!-- Group 1 -->
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: var(--text-secondary);
+                "
+                >Transaction Date</span
+              >
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--text-primary);
+                "
+                >09/10/2025</span
+              >
+            </div>
+            <!-- Group 2 -->
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: var(--text-secondary);
+                "
+                >Shipment Date</span
+              >
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--text-primary);
+                "
+                >12/30/2025</span
+              >
+            </div>
+            <!-- Group 3 -->
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: var(--text-secondary);
+                "
+                >Invoice Date</span
+              >
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--text-primary);
+                "
+                >-</span
+              >
+            </div>
+          </div>
+
+          <!-- Bottom Row -->
+          <div style="display: flex; align-items: center; gap: 40px">
+            <!-- Notes Icon -->
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: var(--text-secondary); flex-shrink: 0"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              ></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+
+            <!-- Group 1 -->
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: var(--text-secondary);
+                "
+                >Transaction Type</span
+              >
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--text-primary);
+                "
+                >Delivery</span
+              >
+            </div>
+            <!-- Group 2 -->
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: var(--text-secondary);
+                "
+                >Business Unit</span
+              >
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--text-primary);
+                "
+                >Main Bu</span
+              >
+            </div>
+            <!-- Group 3 -->
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: var(--text-secondary);
+                "
+                >Source</span
+              >
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: var(--text-primary);
+                "
+                >Manual Entry</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Separator -->
+      <div
+        style="height: 1px; background: var(--border-default); margin-top: 16px"
+      ></div>
+
+      <!-- Bottom Div -->
+      <div style="padding: 20px; padding-top: 16px; flex: 1">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <!-- Route Information -->
+          <div style="display: flex; align-items: center; gap: 12px">
+            <!-- Route Icon -->
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: var(--text-secondary)"
+            >
+              <circle cx="6" cy="19" r="3"></circle>
+              <path
+                d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"
+              ></path>
+              <circle cx="18" cy="5" r="3"></circle>
+            </svg>
+
+            <!-- Route Chips -->
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0;
+                flex-wrap: nowrap;
+              "
+            >
+              <!-- United States -->
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 6px 12px;
+                  background: var(--surface-sub);
+                  border: 1px solid var(--border-default);
+                  border-radius: 20px;
+                  white-space: nowrap;
+                "
+              >
+                <div
+                  style="
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: linear-gradient(
+                      180deg,
+                      #b22234 0%,
+                      #b22234 46%,
+                      #ffffff 46%,
+                      #ffffff 54%,
+                      #3c3b6e 54%,
+                      #3c3b6e 100%
+                    );
+                  "
+                ></div>
+                <span
+                  style="
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                  "
+                  >United States</span
+                >
+              </div>
+
+              <!-- Connecting Line -->
+              <div
+                style="
+                  width: 30px;
+                  height: 2px;
+                  background: var(--border-strong);
+                "
+              ></div>
+
+              <!-- United Kingdom -->
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 6px 12px;
+                  background: var(--surface-sub);
+                  border: 1px solid var(--border-default);
+                  border-radius: 20px;
+                  white-space: nowrap;
+                "
+              >
+                <div
+                  style="
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: linear-gradient(
+                      180deg,
+                      #012169 0%,
+                      #012169 46%,
+                      #ffffff 46%,
+                      #ffffff 54%,
+                      #c8102e 54%,
+                      #c8102e 100%
+                    );
+                  "
+                ></div>
+                <span
+                  style="
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                  "
+                  >United Kingdom</span
+                >
+              </div>
+
+              <!-- Connecting Line -->
+              <div
+                style="
+                  width: 30px;
+                  height: 2px;
+                  background: var(--border-strong);
+                "
+              ></div>
+
+              <!-- Japan -->
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 6px 12px;
+                  background: var(--surface-sub);
+                  border: 1px solid var(--border-default);
+                  border-radius: 20px;
+                  white-space: nowrap;
+                "
+              >
+                <div
+                  style="
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: radial-gradient(
+                      circle,
+                      #bc002d 0%,
+                      #bc002d 40%,
+                      #ffffff 40%,
+                      #ffffff 100%
+                    );
+                  "
+                ></div>
+                <span
+                  style="
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                  "
+                  >Japan</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Information -->
+          <div style="display: flex; align-items: center; gap: 24px">
+            <!-- Exporter -->
+          <div style="display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; width: max-content;">
+    <span style="font-size: 16px; flex-shrink: 0;">🏭</span>
+    <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); flex-shrink: 0;">Exporter:</span>
+    <span style="font-size: 12px; font-weight: 500; color: var(--text-primary); white-space: nowrap;">
+        TechFlow Industries Corp. (USA)
+    </span>
+</div>
+
+
+
+            <!-- Ship To -->
+         <div style="display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; width: max-content;">
+    <span style="font-size: 16px; flex-shrink: 0;">⚓</span>
+    <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); flex-shrink: 0;">Ship To:</span>
+    <span style="font-size: 12px; font-weight: 500; color: var(--text-primary); white-space: nowrap;">
+        Mediterranean Trading Ltd. (IL)
+    </span>
+</div>
+
+
+
+            <!-- End User -->
+         <div style="display: flex; align-items: center; gap: 6px; flex: wrap;">
+                                <span style="font-size: 16px; flex-shrink: 0;">🏢</span>
+                                <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary); flex-shrink: 0;">End User:</span>
+                                <span style="font-size: 12px; font-weight: 500; color: var(--text-primary);flex-wrap: wrap;">Industrial Solutions Group (IL)</span>
+                            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container: Two Column Layout (25% / 75%) -->
+  <div style="display: flex; gap: 24px">
+    <!-- LEFT COLUMN: Transaction Information (25%) -->
+    <div style="width: 25%; flex-shrink: 0">
+      <div style="height: 100%">
+        <h3
+          style="
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+          "
+        >
+          Transaction Information
+        </h3>
+
+        <!-- Transaction Basics -->
+        <div style="margin-bottom: 16px">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">Transaction Basics</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div class="summary-item">
+                <span class="summary-key">Transaction ID</span>
+                <span class="summary-value">TXN-2024-089742</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Transaction Date</span>
+                <span class="summary-value">2025-09-05</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Shipment Date</span>
+                <span class="summary-value">2025-09-06</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Transaction Type</span>
+                <span class="summary-value">Delivery</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Reference #</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Customer PO No.</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Invoice Details -->
+        <div style="margin-bottom: 16px">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">Invoice Details</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div class="summary-item">
+                <span class="summary-key">Invoice Number</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Invoice Date</span>
+                <span class="summary-value">2025-08-15</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Invoice Due Date</span>
+                <span class="summary-value">2025-09-15</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">PO Date</span>
+                <span class="summary-value">2025-08-05</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Currency</span>
+                <span class="summary-value">USD</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Invoice Terms</span>
+                <span class="summary-value">Net 30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documents & References -->
+        <div style="margin-bottom: 16px">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">Documents & References</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div class="summary-item">
+                <span class="summary-key">Packing List Reference</span>
+                <span class="summary-value">PL-2024-567</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Bill of Lading #</span>
+                <span class="summary-value">BL-2024-890123</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Commercial Invoice #</span>
+                <span class="summary-value">CI-2024-456</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Air Waybill #</span>
+                <span class="summary-value">Not Provided</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Master BOL #</span>
+                <span class="summary-value">Not Provided</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">House BOL #</span>
+                <span class="summary-value">Not Provided</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Freight -->
+        <div style="margin-bottom: 16px">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">Freight</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div class="summary-item">
+                <span class="summary-key">Shipper's Inland</span>
+                <span class="summary-value">245.50</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">International Freight</span>
+                <span class="summary-value">1850.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Destination Inland</span>
+                <span class="summary-value">180.75</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Letter of Credit -->
+        <div style="margin-bottom: 16px">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">Letter of Credit</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div class="summary-item">
+                <span class="summary-key">LOC Number</span>
+                <span class="summary-value">LC2024567890</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Blanket LOC Period From Date</span>
+                <span class="summary-value">2025-01-01</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Blanket LOC Period To Date</span>
+                <span class="summary-value">2025-12-31</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: All Other Content (75%) -->
+    <div style="width: 75%; flex-shrink: 0">
+      <!-- Row 1: Transaction Tabs Card (Full Width) -->
+
+      <!-- Row 2: Two Empty Divs -->
+      <div
+        style="
+          display: flex;
+          gap: 24px;
+          margin-bottom: 32px;
+          align-items: stretch;
+        "
+      >
+        <div style="flex: 1">
+          <div style="height: 100%">
+            <h3
+              style="
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--text-primary);
+                margin-bottom: 16px;
+              "
+            >
+              Transportation
+            </h3>
+
+            <div style="display: flex; gap: 16px; align-items: stretch">
+              <!-- Shipment Details -->
+              <div style="flex: 1">
+                <div class="data-card" style="height: 100%">
+                  <div class="data-card-header">
+                    <div class="data-card-title">Shipment Details</div>
+                    <button class="btn-edit">Edit</button>
+                  </div>
+                  <div class="data-card-body">
+                    <div class="summary-item">
+                      <span class="summary-key">Move Type</span>
+                      <span class="summary-value">Ocean</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Booking Number</span>
+                      <span class="summary-value">MSK2024567890</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Tranship Country</span>
+                      <span class="summary-value">United States</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Shipment Insured By</span>
+                      <span class="summary-value">Shipper</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Containerized?</span>
+                      <span class="summary-value">Yes</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Consolidated?</span>
+                      <span class="summary-value">No</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Requested Sail Date</span>
+                      <span class="summary-value">2024-12-15</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Requested Arrival Date</span>
+                      <span class="summary-value">2025-01-05</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Schedule Docs -->
+              <div style="flex: 1">
+                <div class="data-card" style="height: 100%">
+                  <div class="data-card-header">
+                    <div class="data-card-title">Schedule Docs</div>
+                    <button class="btn-edit">Edit</button>
+                  </div>
+                  <div class="data-card-body">
+                    <div class="summary-item">
+                      <span class="summary-key"
+                        >Est. Time of Departure (ETD)</span
+                      >
+                      <span class="summary-value">2024-12-16</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key"
+                        >Est. Time of Arrival (ETA)</span
+                      >
+                      <span class="summary-value">2025-01-04</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Bill of Lading</span>
+                      <span class="summary-value">MSKU2024567890123</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Master Air Waybill (MAWB)</span>
+                      <span class="summary-value">125-45678901</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">House BOL/AWB</span>
+                      <span class="summary-value">HOUSE2024001234</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Flight/Voyage No</span>
+                      <span class="summary-value">MSK401W</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Vessel Name</span>
+                      <span class="summary-value">MSC MEDITERRANEAN</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1">
+          <div style="height: 100%">
+            <h3
+              style="
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--text-primary);
+                margin-bottom: 16px;
+              "
+            >
+              AES Filing
+            </h3>
+
+            <div style="display: flex; gap: 16px">
+              <!-- Filing & Regulatory Details -->
+              <div style="flex: 1">
+                <div class="data-card">
+                  <div class="data-card-header">
+                    <div class="data-card-title">
+                      Filing & Regulatory Details
+                    </div>
+                    <button class="btn-edit">Edit</button>
+                  </div>
+                  <div class="data-card-body">
+                    <div class="summary-item">
+                      <span class="summary-key">AES Filing Required</span>
+                      <span class="summary-value">Yes</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">AES Filing Status</span>
+                      <span class="summary-value">Filed</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">AES ITN Number</span>
+                      <span class="summary-value">AES20240912345678</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Filing Date</span>
+                      <span class="summary-value">2025-09-05</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Related Party</span>
+                      <span class="summary-value">No</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Routed Export Indicator</span>
+                      <span class="summary-value">No</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Filing Option Indicator</span>
+                      <span class="summary-value">Post Departure</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Hazardous</span>
+                      <span class="summary-value">No</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Codes & Transport Information -->
+              <div style="flex: 1">
+                <div class="data-card">
+                  <div class="data-card-header">
+                    <div class="data-card-title">
+                      Codes & Transport Information
+                    </div>
+                    <button class="btn-edit">Edit</button>
+                  </div>
+                  <div class="data-card-body">
+                    <div class="summary-item">
+                      <span class="summary-key">Point of Origin</span>
+                      <span class="summary-value">Los Angeles, CA</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Inbond Code</span>
+                      <span class="summary-value">61</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Foreign Trade Zone Code</span>
+                      <span class="summary-value">142</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Entry Number</span>
+                      <span class="summary-value">11912-1234567-8</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">MOT Code</span>
+                      <span class="summary-value"
+                        >11 - Vessel, Containerized</span
+                      >
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Port of Lading</span>
+                      <span class="summary-value">2704 - Los Angeles, CA</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">SCAC</span>
+                      <span class="summary-value">MSCU</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-key">Port of Unlading</span>
+                      <span class="summary-value">Haifa, Israel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs-card">
+        <!-- Tabs Navigation -->
+        <div class="tabs-nav">
+          <div class="tab active" data-tab="item">Transaction Item</div>
+          <div class="tab" data-tab="partner">Transaction Partner</div>
+          <div class="tab" data-tab="compliance">Compliance Leg</div>
+          <div class="tab" data-tab="documents">Documents</div>
+          <div class="tab" data-tab="notes">Notes</div>
+          <div class="tab" data-tab="timeline">Timeline</div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content-container">
+          <!-- Item Tab -->
+          <div id="item-tab" class="tab-content active">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Line ID / Product ID</th>
+                  <th>Product Description</th>
+                  <th>Quantity/UOM</th>
+                  <th>Unit Price</th>
+                  <th>ECCN</th>
+                  <th>Export HS</th>
+                  <th>COO</th>
+                  <th>Serial Number</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>001 / PRD-8745</strong></td>
+                  <td>Advanced Radar System Module</td>
+                  <td>5 / EA</td>
+                  <td>$2,450.00</td>
+                  <td>5A001.b.1</td>
+                  <td>8526910040</td>
+                  <td>US</td>
+                  <td>SN-2024-AR-1001</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>002 / PRD-6234</strong></td>
+                  <td>Encrypted Communication Device</td>
+                  <td>10 / EA</td>
+                  <td>$1,850.00</td>
+                  <td>5A002.a</td>
+                  <td>8517620090</td>
+                  <td>US</td>
+                  <td>SN-2024-EC-2045</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>003 / PRD-9128</strong></td>
+                  <td>Night Vision Scope Assembly</td>
+                  <td>8 / EA</td>
+                  <td>$3,200.00</td>
+                  <td>6A003.b</td>
+                  <td>9013200000</td>
+                  <td>DE</td>
+                  <td>SN-2024-NV-3012</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>004 / PRD-5567</strong></td>
+                  <td>Tactical GPS Navigation Unit</td>
+                  <td>15 / EA</td>
+                  <td>$980.00</td>
+                  <td>7A003</td>
+                  <td>8526910045</td>
+                  <td>US</td>
+                  <td>SN-2024-GP-4256</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>005 / PRD-7891</strong></td>
+                  <td>Fiber Optic Cable Spool (500m)</td>
+                  <td>20 / EA</td>
+                  <td>$425.00</td>
+                  <td>5A991.b</td>
+                  <td>9001100000</td>
+                  <td>JP</td>
+                  <td>SN-2024-FO-5789</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>006 / PRD-3421</strong></td>
+                  <td>Ballistic Protection Vest (Level IV)</td>
+                  <td>25 / EA</td>
+                  <td>$1,200.00</td>
+                  <td>1A005</td>
+                  <td>6307900010</td>
+                  <td>US</td>
+                  <td>SN-2024-BP-6543</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>007 / PRD-2156</strong></td>
+                  <td>Thermal Imaging Camera (Military Grade)</td>
+                  <td>3 / EA</td>
+                  <td>$5,600.00</td>
+                  <td>6A003.b.4</td>
+                  <td>8525801300</td>
+                  <td>FR</td>
+                  <td>SN-2024-TI-7123</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>008 / PRD-4789</strong></td>
+                  <td>Drone Signal Jammer (Portable)</td>
+                  <td>6 / EA</td>
+                  <td>$2,100.00</td>
+                  <td>5A001.f</td>
+                  <td>8543709097</td>
+                  <td>IL</td>
+                  <td>SN-2024-DJ-8456</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>009 / PRD-6012</strong></td>
+                  <td>Secure Satellite Phone Terminal</td>
+                  <td>12 / EA</td>
+                  <td>$1,750.00</td>
+                  <td>5A002.c</td>
+                  <td>8517620050</td>
+                  <td>US</td>
+                  <td>SN-2024-SP-9087</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>010 / PRD-8345</strong></td>
+                  <td>Ruggedized Laptop Computer (MIL-SPEC)</td>
+                  <td>18 / EA</td>
+                  <td>$3,800.00</td>
+                  <td>4A003.b</td>
+                  <td>8471300000</td>
+                  <td>US</td>
+                  <td>SN-2024-RL-1098</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <div class="pagination-info">Showing 1-10 of 47 items</div>
+              <div class="pagination-controls">
+                <button class="pagination-btn" disabled>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                  Previous
+                </button>
+                <div class="pagination-pages">
+                  <button class="pagination-page active">1</button>
+                  <button class="pagination-page">2</button>
+                  <button class="pagination-page">3</button>
+                  <button class="pagination-page">4</button>
+                  <button class="pagination-page">5</button>
+                </div>
+                <button class="pagination-btn">
+                  Next
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partner Tab -->
+          <div id="partner-tab" class="tab-content">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Partner Type</th>
+                  <th>Partner ID</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Exporter</strong></td>
+                  <td>PRT-009483</td>
+                  <td>Beijing AeroTech Logistics Ltd.</td>
+                  <td>
+                    No. 88, Tianzhu Industrial Park, Shunyi District, Beijing
+                    101312, China
+                  </td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Importer</strong></td>
+                  <td>PRT-012456</td>
+                  <td>Global Defense Solutions Inc.</td>
+                  <td>
+                    1250 Pentagon Avenue, Arlington, VA 22202, United States
+                  </td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Freight Forwarder</strong></td>
+                  <td>PRT-007821</td>
+                  <td>TransPacific Logistics GmbH</td>
+                  <td>Hauptstrasse 45, 60329 Frankfurt, Germany</td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Consignee</strong></td>
+                  <td>PRT-015234</td>
+                  <td>Strategic Systems International</td>
+                  <td>789 Harbor Drive, San Diego, CA 92101, United States</td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>End User</strong></td>
+                  <td>PRT-018765</td>
+                  <td>Ministry of Defense - Allied Forces</td>
+                  <td>Government Complex, Block 7, Seoul 03172, South Korea</td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Customs Broker</strong></td>
+                  <td>PRT-009102</td>
+                  <td>QuickClear Customs Services Ltd.</td>
+                  <td>
+                    567 Trade Center Blvd, Los Angeles, CA 90021, United States
+                  </td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Intermediary</strong></td>
+                  <td>PRT-011489</td>
+                  <td>Pacific Trade Consortium</td>
+                  <td>23-7 Roppongi, Minato-ku, Tokyo 106-0032, Japan</td>
+                  <td>
+                    <span class="status-chip status-warning">Pending</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Shipper</strong></td>
+                  <td>PRT-013567</td>
+                  <td>SecureShip Maritime Services</td>
+                  <td>Port of Hamburg, Dock 12, 20457 Hamburg, Germany</td>
+                  <td>
+                    <span class="status-chip status-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <div class="pagination-info">Showing 1-8 of 8 partners</div>
+              <div class="pagination-controls">
+                <button class="pagination-btn" disabled>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                  Previous
+                </button>
+                <div class="pagination-pages">
+                  <button class="pagination-page active">1</button>
+                </div>
+                <button class="pagination-btn" disabled>
+                  Next
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compliance Tab -->
+          <div id="compliance-tab" class="tab-content">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Line Id</th>
+                  <th>Leg Id</th>
+                  <th>License No</th>
+                  <th>System Export Decision</th>
+                  <th>User Export Decision</th>
+                  <th>Final Export Decision</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1</strong></td>
+                  <td>2</td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2</strong></td>
+                  <td>1</td>
+                  <td>DY6</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td><strong>DY6</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>3</strong></td>
+                  <td>2</td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>4</strong></td>
+                  <td>1</td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>4</strong></td>
+                  <td>3</td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>5</strong></td>
+                  <td>1</td>
+                  <td>EAR99</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td><strong>EAR99</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>6</strong></td>
+                  <td>2</td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>7</strong></td>
+                  <td>1</td>
+                  <td>AT3</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td><strong>AT3</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>8</strong></td>
+                  <td>1</td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>9</strong></td>
+                  <td>2</td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>10</strong></td>
+                  <td>1</td>
+                  <td>FX2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td><strong>FX2</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>10</strong></td>
+                  <td>3</td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>-</td>
+                  <td><span class="status-chip status-warning">HOLD</span></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>11</strong></td>
+                  <td>1</td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>-</td>
+                  <td><strong>NLR</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>12</strong></td>
+                  <td>2</td>
+                  <td>BX8</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td><strong>BX8</strong></td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="icon-btn" title="View">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Edit">
+                        <svg
+                          class="icon-edit"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                          />
+                          <path
+                            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                          />
+                        </svg>
+                      </button>
+                      <button class="icon-btn" title="Delete">
+                        <svg
+                          class="icon-delete"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="3 6 5 6 21 6" />
+                          <path
+                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <div class="pagination-info">
+                Showing 1-10 of 12 compliance legs
+              </div>
+              <div class="pagination-controls">
+                <button class="pagination-btn" disabled>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                  Previous
+                </button>
+                <div class="pagination-pages">
+                  <button class="pagination-page active">1</button>
+                  <button class="pagination-page">2</button>
+                </div>
+                <button class="pagination-btn">
+                  Next
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documents Tab -->
+          <div id="documents-tab" class="tab-content">
+            <div class="empty-state">
+              <div class="empty-state-icon">📄</div>
+              <div class="empty-state-title">Transaction Documents</div>
+              <div class="empty-state-description">
+                Uploaded documents and supporting materials.
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes Tab -->
+          <div id="notes-tab" class="tab-content">
+            <div class="empty-state">
+              <div class="empty-state-icon">📝</div>
+              <div class="empty-state-title">Transaction Notes</div>
+              <div class="empty-state-description">
+                Internal notes and additional information.
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Tab -->
+          <div id="timeline-tab" class="tab-content">
+            <div class="empty-state">
+              <div class="empty-state-icon">⏱️</div>
+              <div class="empty-state-title">Transaction Timeline</div>
+              <div class="empty-state-description">
+                Chronological history of events and status changes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Two Cards (Compliance, BILL / CHARGES) -->
+      <div
+        style="display: flex; gap: 24px; margin-top: 32px; margin-bottom: 24px"
+      >
+        <!-- Compliance -->
+        <div style="flex: 1">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">Compliance</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div class="summary-item">
+                <span class="summary-key">Country of Export</span>
+                <span class="summary-value">United States</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Manual Hold Flag</span>
+                <span class="summary-value">No</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Intermediate Country</span>
+                <span class="summary-value">Select</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">License #</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Country of Ultimate Destination</span>
+                <span class="summary-value">Select</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Leg1 Track By</span>
+                <span class="summary-value">Select</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Cost Center</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Import Certificate Number</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">VAT Number</span>
+                <span class="summary-value">REF-2024-001234</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BILL / CHARGES -->
+        <div style="flex: 1">
+          <div class="data-card">
+            <div class="data-card-header">
+              <div class="data-card-title">BILL / CHARGES</div>
+              <button class="btn-edit">Edit</button>
+            </div>
+            <div class="data-card-body">
+              <div
+                style="
+                  margin-bottom: 12px;
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid var(--border-default);
+                "
+              >
+                <span
+                  style="
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: var(--text-muted);
+                  "
+                  >Currency: USD</span
+                >
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Items Subtotal</span>
+                <span class="summary-value">25,120.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Insurance Cost</span>
+                <span class="summary-value">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Packaging Cost</span>
+                <span class="summary-value">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Freight Total</span>
+                <span class="summary-value">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Handling Charges</span>
+                <span class="summary-value">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Other Charges</span>
+                <span class="summary-value">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Margin (+) or Discount (−)</span>
+                <span class="summary-value">0.00%</span>
+              </div>
+              <div
+                style="
+                  margin-top: 16px;
+                  padding-top: 16px;
+                  border-top: 2px solid var(--border-strong);
+                "
+              >
+                <div class="summary-item">
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 700;
+                      color: var(--text-primary);
+                      text-transform: uppercase;
+                    "
+                    >TOTAL PAYABLE</span
+                  >
+                  <span
+                    style="
+                      font-size: 18px;
+                      font-weight: 700;
+                      color: var(--text-primary);
+                    "
+                    >25,120.00</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Panel Overlay -->
+<div
+  id="editPanelOverlay"
+  style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  "
+></div>
+
+<!-- Edit Panel -->
+<div
+  id="editPanel"
+  style="
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100vh;
+    background: white;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  "
+>
+  <!-- Panel Header -->
+  <div
+    style="
+      padding: 20px;
+      border-bottom: 1px solid var(--border-default);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 1;
+    "
+  >
+    <h3
+      id="editPanelTitle"
+      style="
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+      "
+    >
+      Edit
+    </h3>
+    <button
+      onclick="closeEditPanel()"
+      style="
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        color: var(--text-secondary);
+      "
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Panel Content -->
+  <div id="editPanelContent" style="padding: 20px">
+    <!-- Form fields will be dynamically inserted here -->
+  </div>
+
+  <!-- Panel Footer -->
+  <div
+    style="
+      padding: 20px;
+      border-top: 1px solid var(--border-default);
+      display: flex;
+      gap: 12px;
+      position: sticky;
+      bottom: 0;
+      background: white;
+    "
+  >
+    <button
+      onclick="saveEditPanel()"
+      style="
+        flex: 1;
+        background: #000000;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+    >
+      Save
+    </button>
+    <button
+      onclick="closeEditPanel()"
+      style="
+        flex: 1;
+        background: white;
+        color: var(--text-primary);
+        border: 1px solid var(--border-default);
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+      "
+    >
+      Cancel
+    </button>
+  </div>
+</div>

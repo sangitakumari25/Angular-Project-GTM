@@ -1,0 +1,36 @@
+<div class="tw-flex tw-items-center tw-justify-between tw-bg-gray-900 tw-text-white tw-px-6 tw-py-4 tw-shadow-md">
+  <!-- Logo Only -->
+  <div class="logo tw-w-28 tw-h-16">
+    <img src="../../assets/LogoSmall.png" alt="Logo" class="tw-w-full tw-h-full tw-object-contain">
+  </div>
+
+  <!-- Right Container -->
+  <div class="tw-flex tw-space-x-8 tw-text-lg tw-font-medium">
+    <div class="hover:tw-text-blue-400 tw-cursor-pointer">Home</div>
+    <div class="hover:tw-text-blue-400 tw-cursor-pointer">Table</div>
+    <div class="hover:tw-text-blue-400 tw-cursor-pointer">Contact Us</div>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="tw-text-white">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+      <button mat-menu-item (click)="goToTransactions()">
+        <mat-icon>list_alt</mat-icon>
+        <span>Transactions</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>
