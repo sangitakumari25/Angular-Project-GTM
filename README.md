@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Gtm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
@@ -26,7 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
+
 # Angular-Project-GTM
 A training project built using Angular to learn and implement core web development concepts such as components, routing, and data binding.
->>>>>>> 48b0c21f28576dada5d6dd24e6fc1469d3f8f5a2
+48b0c21f28576dada5d6dd24e6fc1469d3f8f5a2
